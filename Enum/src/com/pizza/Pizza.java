@@ -1,3 +1,5 @@
+package com.pizza;
+
 public enum Pizza {
     MARGHERITA("sos pomidorowy + ser"), CAPRICIOZA("sos pomidorowy + ser + pieczarki"),
     PROSCIUTTO("sos pomidorowy + ser + szynka");
@@ -17,7 +19,7 @@ public enum Pizza {
 
     @Override
     public String toString() {
-        return "Pizza{" +
+        return "com.pizza.Pizza{" +
                 "description='" + description + '\'' +
                 '}';
     }
