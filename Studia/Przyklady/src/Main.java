@@ -5,24 +5,10 @@ class Car {
 public class Main {
 
     public static void main(String[] args) {
-        Car bmw = new Car();
-        Car mercedes = new Car();
 
-        System.out.printf("Car speed limit: %s\n", Car.speedLimit);
-        System.out.printf("Car speed limit: %s\n", bmw.speedLimit);
-        System.out.printf("Car speed limit: %s\n", mercedes.speedLimit);
+        System.out.println(Tshirt.valueOf("SMALL"));
+        System.out.println(Tshirt.SMALL);
+        System.out.println(Tshirt.MEDIUM.getDescription());
 
-        Car.speedLimit = 190;
-
-        System.out.printf("Car speed limit: %s\n", Car.speedLimit);
-        System.out.printf("Car speed limit: %s\n", bmw.speedLimit);
-        System.out.printf("Car speed limit: %s\n", mercedes.speedLimit);
-
-
-        mercedes.speedLimit = 200;
-
-        System.out.printf("Car speed limit: %s\n", Car.speedLimit);
-        System.out.printf("Car speed limit: %s\n", bmw.speedLimit);
-        System.out.printf("Car speed limit: %s\n", mercedes.speedLimit);
     }
 }
