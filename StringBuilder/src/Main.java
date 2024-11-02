@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        //przerobić program na zadanie z JavaStart w daleszej części :)
+        
 
         Scanner scanner = new Scanner(System.in);
 
@@ -11,14 +10,20 @@ public class Main {
         int choice = scanner.nextInt();
         scanner.nextLine();
         System.out.printf("Podaj %d wyrazów: ", choice);
+
         String[] tabOfWords = new String[choice];
+
+        StringBuilder finalWorld = new StringBuilder();
+
         for (int i = 0; i < tabOfWords.length; i++) {
             tabOfWords[i] = scanner.nextLine();
+            finalWorld.append(tabOfWords[i].charAt(tabOfWords[i].length() - 1));
+
         }
 
-        for (String x : tabOfWords) {
-            System.out.println(x);
-        }
+        System.out.println(finalWorld);
+
+
 
     }
 }
