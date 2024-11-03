@@ -1,21 +1,16 @@
 public class DynamicTable {
 
-    public double[] table = new double[0];
+    double[] table = new double[0];
 
-    int count=0;
-
-    public void addItem(double item){
-        for (int i =count; i < table.length ; i++) {
-            table[i]=item;
-            i++;
-            double[] newTable = new double[i];
+    public void addItem(double number) {
+        double[] newItems = new double[table.length + 1];
+        int index = 0;
+        for (double item: table) {
+            newItems[index] = item;
+            index++;
         }
-
-
-        }
-
+        newItems[newItems.length - 1] = number;
+        table = newItems;
     }
-
-
-
 }
+
