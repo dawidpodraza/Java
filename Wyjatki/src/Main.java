@@ -1,8 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-// NAPISAĆ TO SAMO WYKORZYSTUJĄC STAŁE STATYCZNE I SWITCH CASE !!!!!!!!!!!! W CALCULATE
-// PAMIĘTAĆ O WYJĄTKACH ZGODNIE Z TREŚCIĄ ZADANIE Z JAVASTART
 
 public class Main {
     public static void main(String[] args) {

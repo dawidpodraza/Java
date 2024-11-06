@@ -4,7 +4,7 @@ import java.util.Scanner;
 class EvenAdder {
     public static void main(String[] args) {
         int[] array = createEvenArray(5);
-        //reverseArray(array);
+        array= reverseArray(array);
         System.out.println(Arrays.toString(array));
     }
 
@@ -20,20 +20,25 @@ class EvenAdder {
             int next = scanner.nextInt();
             if(next%2==0) {
                 result[i] = next;
+            }else{
+                i--;
             }
+
         }
         return result;
 
+
     }
+
 
     /**
      *
      * @param number - number to be checked
      * @return true if number is even, or false otherwise
      */
-    private static boolean isEven(int number) {
-        return number == 0;
-    }
+//    private static boolean isEven(int number) {
+//        return number == 0;
+//    }
 
     /**
      * @param array - array to be reversed
@@ -41,8 +46,10 @@ class EvenAdder {
      */
     private static int[] reverseArray(int[] array) {
         int[] reversed = new int[array.length];
+        int index = array.length-1;
         for (int i = 0; i < reversed.length; i++) {
-            array[i] = reversed[i];
+            reversed[i]=array[index];
+            index--;
         }
         return reversed;
     }

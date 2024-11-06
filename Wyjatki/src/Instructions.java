@@ -7,7 +7,7 @@ public class Instructions {
         System.out.println("Podaj działanie + - * /");
     }
     public void thirdMessage(){
-        System.out.println("Podaj pierwszą liczbę");
+        System.out.println("Podaj drugą liczbę");
     }
 
 }
