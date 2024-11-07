@@ -9,6 +9,6 @@ public class Main {
         uniqueTable.addItem(76);
         uniqueTable.addItem(34);
 
-        System.out.println(uniqueTable.toString());
+
     }
 }

@@ -9,10 +9,9 @@ public class Main {
         dynamicTable.addItem(4);
         dynamicTable.addItem(4);
 
+        dynamicTable.deleteItem(5);
 
 
-        for(double x : dynamicTable.table){
-            System.out.println(x);
-        }
+        System.out.println(dynamicTable.toString());
     }
 }

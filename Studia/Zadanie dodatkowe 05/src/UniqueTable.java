@@ -1,42 +1,23 @@
+import java.util.Arrays;
 
 public class UniqueTable {
 
-    private double[] table = new double[1];
+    private double[] table = new double[0];
 
 
-    public void addItem(double item) {
+    public void addItem(double newItem) {
 
-        double[] newTable = new double[table.length + 1];
-        for (int i = 0; i < table.length; i++) {
-            if (table[i] == 0) {
-                table[i] = item;
-                newTable[i] = item;
-
-            } else if (table[i]!=0) {
-                newTable[i] = table[i];
-            }
-            table = newTable;
-        }
     }
-        public void deleteItem ( double item){
-            // odejmowanie zadanie wartosci z tablicy i pomniejszanie tablicy
 
-        }
-
-        public double[] getTable () {
-            return table;
-        }
+    public void deleteItem(double deleteItem) {
 
 
-        @Override
-        public String toString () {
-            String info = "";
-            for (int i = 0; i < table.length; i++) {
-                info = info + " " + table[i];
-
-            }
-            return info;
-        }
     }
+
+    @Override
+    public String toString() {
+        return "Tablica: " + Arrays.toString(table);
+    }
+}
 
 
