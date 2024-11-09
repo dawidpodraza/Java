@@ -12,6 +12,6 @@ public class Main {
         String dayOfWeek = localDate.getDayOfWeek().toString();
 
         System.out.println(dayOfWeek);
-
+        // zadanie zrobione
     }
 }
