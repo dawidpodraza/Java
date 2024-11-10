@@ -1,4 +1,4 @@
-package PACKAGE_NAME;
-
 public interface Sortable {
+
+    void sort(int[] tab);
 }
