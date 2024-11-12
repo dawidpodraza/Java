@@ -1,36 +1,83 @@
 import java.io.*;
+import java.sql.SQLOutput;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class CompanyApp {
     public static void main(String[] args) {
 
-        String fileName1 = "person.obj1";
-        String fileName2 = "person.obj2";
-        String fileName3 = "person.obj3";
-        Employee employee1 = new Employee("Kamil", "Nowak", 12223);
-        Employee employee2 = new Employee("Jacek", "Kowal", 8520);
-        Employee employee3 = new Employee("Marcin", "Gruby", 9700);
+        userQuestioner();
 
+        // polepszyć czytelność kodu , zrobić funkcjonalność aby dodawano kolejnych pracowników
+
+    }
+
+    private static void userQuestioner() {
+        Scanner scanner = new Scanner(System.in);
+        Company company = new Company();
+        String fileName1 = "employee.obj";
+
+        System.out.println("Dokonaj wyboru:");
+        System.out.println("1 - dodaj pracownika");
+        System.out.println("2 - wczytaj pracownika z pliku");
+        int choice = 0;
+        try {
+            choice = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Zły wybór");
+        }
+        switch (choice) {
+            case 1:
+                company.addEmployees();
+                writeToFile(fileName1, company.getEmployees());
+                userQuestioner();
+                break;
+            case 2:
+                readFromFile(fileName1, company.getEmployees());
+                userQuestioner();
+                break;
+
+        }
+    }
+
+    private static void writeToFile(String fileName, Employee[] employee) {
         try (
-                var fileStrem1 = new FileOutputStream(fileName1);
-                var fileStrem2 = new FileOutputStream(fileName2);
-                var fileStrem3 = new FileOutputStream(fileName3);
-                var objStream1 = new ObjectOutputStream(fileStrem1);
-                var objStream2= new ObjectOutputStream(fileStrem2);
-                var objStream3 = new ObjectOutputStream(fileStrem3);
+                var fos= new FileOutputStream(fileName,true);
+
+                var oos= new ObjectOutputStream(fos);
+
                 )
         {
-            objStream1.writeObject(employee1);
+            oos.writeObject(employee);
             System.out.println("Zapisano 1 obiekt do pliku");
-            objStream2.writeObject(employee2);
-            System.out.println("Zapisano 2 obiekt do pliku");
-            objStream3.writeObject(employee3);
-            System.out.println("Zapisano 3 obiekt do pliku");
 
         } catch (IOException e) {
             System.out.println("Wystąpił bład zapisu...");
         }
+    }
+
+    private static void readFromFile(String fileName,Employee[] employee){
+        try(
+                var fis1 = new FileInputStream(fileName);
+
+                var ois1 = new ObjectInputStream(fis1);
+
+        ){
+            employee = (Employee[]) ois1.readObject();
+
+        } catch (IOException e) {
+            System.out.println("Nie wczytano danych z pliku...");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Nie znalezniono takiej klasy...");
+        }
 
 
+        assert employee != null; // poczytać co to jest ....
+        System.out.println(Arrays.toString(employee));
 
     }
+
+
+
 }

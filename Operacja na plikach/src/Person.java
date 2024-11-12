@@ -30,9 +30,8 @@ public class Person implements Serializable {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                '}';
+        return
+                "Imie: " + firstName +
+                " Nazwisko: " + secondName;
     }
 }
