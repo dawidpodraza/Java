@@ -9,14 +9,16 @@ public class CompanyApp {
 
         userQuestioner();
 
-        // polepszyć czytelność kodu , zrobić funkcjonalność aby dodawano kolejnych pracowników
 
     }
 
     private static void userQuestioner() {
         Scanner scanner = new Scanner(System.in);
         Company company = new Company();
+        int index = 0;
         String fileName1 = "employee.obj";
+        String fileName2 = "employee2.obj";
+        String fileName3 = "employee3.obj";
 
         System.out.println("Dokonaj wyboru:");
         System.out.println("1 - dodaj pracownika");
@@ -30,7 +32,13 @@ public class CompanyApp {
         switch (choice) {
             case 1:
                 company.addEmployees();
-                writeToFile(fileName1, company.getEmployees());
+
+                    writeToFile(fileName1, company.getEmployees());
+                company.addEmployees();
+                    writeToFile(fileName2, company.getEmployees());
+                company.addEmployees();
+                    writeToFile(fileName3, company.getEmployees());
+
                 userQuestioner();
                 break;
             case 2:
@@ -44,12 +52,12 @@ public class CompanyApp {
     private static void writeToFile(String fileName, Employee[] employee) {
         try (
                 var fos= new FileOutputStream(fileName,true);
-
                 var oos= new ObjectOutputStream(fos);
 
                 )
         {
             oos.writeObject(employee);
+            oos.close();
             System.out.println("Zapisano 1 obiekt do pliku");
 
         } catch (IOException e) {
