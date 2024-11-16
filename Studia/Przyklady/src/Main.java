@@ -1,14 +1,25 @@
-class Car {
-    static int speedLimit = 180;
-}
+import java.util.Scanner;
 
 public class Main {
+    private static final int MAGIC_NUMBER = 0;
 
     public static void main(String[] args) {
 
-        System.out.println(Tshirt.valueOf("SMALL"));
-        System.out.println(Tshirt.SMALL);
-        System.out.println(Tshirt.MEDIUM.getDescription());
+        Scanner scanner = new Scanner(System.in);
+        int index = 1;
+        int sum = 0;
 
+        while (index != 0) {
+            System.out.println("Podaj liczbę: ");
+            index = scanner.nextInt();
+            scanner.nextLine();
+            sum = sum + index;
+
+        }
+
+        System.out.println("Suma: " + sum);
+
+        
     }
 }
+
