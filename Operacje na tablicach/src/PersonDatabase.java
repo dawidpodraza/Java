@@ -26,6 +26,27 @@ public class PersonDatabase {
         return persons;
     }
 
+    public void get(int index){
+        if(index> persons.length){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        System.out.println(getPersons()[index]);
+    }
+
+    public void size(){
+        int count = 0;
+        int countEmpty = 0;
+        for (int i = 0; i < persons.length ; i++) {
+            if(persons[i]==null){
+                countEmpty = countEmpty +1;
+            }else{
+                count=count+1;
+            }
+        }
+        System.out.println("Liczba elementów w tablicy: "+count);
+        System.out.println("Liczba null w tablicy: "+countEmpty);
+    }
+
     public void printInfo(){
         System.out.println(Arrays.toString(persons));
     }
