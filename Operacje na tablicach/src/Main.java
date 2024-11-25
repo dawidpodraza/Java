@@ -19,10 +19,16 @@ public class Main {
         database.add(p3);
         database.add(p3);
 
-        // DODAĆ FUNKCJONALNOŚĆ REMOVE
 
         database.printInfo();
         database.size();
+        database.remove(p1);
+        database.remove(p3);
+//        database.remove(p4);
+        database.printInfo();
+
+
+
 
 
 

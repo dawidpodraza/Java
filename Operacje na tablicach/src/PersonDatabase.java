@@ -8,7 +8,7 @@ public class PersonDatabase {
 
         for (int i = 0; i < persons.length; i++) {
             if (persons[persons.length - 1] != null) {
-                index = index + 1;
+                index = index * 2;
                 Person[] newtab = Arrays.copyOf(persons, index);
                 persons = newtab;
 
@@ -18,6 +18,28 @@ public class PersonDatabase {
                 persons[i] = p;
             }
 
+        }
+
+    }
+    public void remove(Person p){
+        if(p==null){
+            throw new NullPointerException();
+        }
+
+        for (int i = 0; i < persons.length; i++) {
+            if(persons[i]==p){
+                persons[i]=null;
+            }
+        }
+        for (int i = 0; i < persons.length ; i++) {
+            Person temp = null;
+            for (int j = 1; j < persons.length-i ; j++) {
+                if(persons[j-1]==null){
+                    temp = persons[j];
+                    persons[j]= persons[j-1];
+                    persons[j-1]=temp;
+                }
+            }
         }
 
     }
