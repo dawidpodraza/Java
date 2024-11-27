@@ -3,9 +3,6 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        // dopracowac zeby stos sie faktyczie pomniejszał podczas pop (pobieranie elementow ze stosu)
-        // zmodyfikowac metode peek pod to wszystko
-
         Stos stos = new Stos();
         stos.push(2);
         stos.push(4);
@@ -17,20 +14,11 @@ public class Main {
         stos.push(21);
 
         System.out.println(stos.toString());
-
         System.out.println(stos.pop());
         System.out.println(stos.pop());
         System.out.println(stos.pop());
-        System.out.println(stos.pop());
-        System.out.println(stos.pop());
-        System.out.println(stos.pop());
-
-
-
-        System.out.println("Stos peek: "+stos.peek());
-
-
-
+        System.out.println(stos.toString());
+        System.out.println("Stos peek: " + stos.peek());
 
     }
 
