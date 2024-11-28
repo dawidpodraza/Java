@@ -7,11 +7,12 @@ public class Main {
         words.ask();
         words.ask();
         words.ask();
+        words.ask();
 
-        System.out.println(words.toString());
 
-        //wymyślić jak zliczac te same wystapienia wyrazów
-        
+        words.count();
+        words.count();
+
     }
 
 }

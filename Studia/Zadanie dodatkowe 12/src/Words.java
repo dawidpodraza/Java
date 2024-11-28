@@ -14,30 +14,31 @@ public class Words {
     }
 
 
-
     public void ask() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj słowo: ");
+        System.out.println("Podaj słowo (lub wpisz q aby zakończyć): ");
         String answer = scanner.next();
+        if(answer.equals("q")){
+            System.exit(0);
+        }
         words[index] = answer;
         words = Arrays.copyOf(words, words.length + 1);
         index++;
     }
 
-//    public void count() {
-//
-//        int countA = 0;
-//        int countB = 0;
-//        for (int i = 0; i < words.length; i++) {
-//            for (int j = 0; j < words.length; j++) {
-//                if (words[i].equals(words[j + 1])) {
-//                    String a = words[i];
-//                    countA++;
-//                }
-//            }
-//        }
-//
-//    }
+    public void count() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Jakie słowo chcesz sprawdzić? ");
+        String wordToFind = scanner.next();
+        int counter = 0;
+        for (int i = 0; i < words.length; i++) {
+            if (wordToFind.equals(words[i])) {
+                counter++;
+            }
+        }
+        System.out.println("Liczba słow " + wordToFind + " w tablicy: " + counter);
+
+    }
 
     @Override
     public String toString() {
