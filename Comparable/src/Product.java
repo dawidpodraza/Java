@@ -1,7 +1,12 @@
-public class Product implements Comparable<Product>{
+public class Product implements Comparable<Product> {
     private String name;
     private String producer;
     private double price;
+
+    @Override
+    public String toString() {
+        return name + " " + producer + " " + price;
+    }
 
     public String getName() {
         return name;
@@ -35,14 +40,14 @@ public class Product implements Comparable<Product>{
 
     @Override
     public int compareTo(Product p) {
-        if(price>p.price){
+        if (price > p.price) {
             return -1;
-        }else if(price<p.price){
+        } else if (price < p.price) {
             return 1;
         }
-        if(name.compareTo(p.name)>0){
+        if (name.compareTo(p.name) > 0) {
             return -1;
-        }else if(name.compareTo(p.name)<0){
+        } else if (name.compareTo(p.name) < 0) {
             return 1;
         }
         return producer.compareTo(p.producer);
