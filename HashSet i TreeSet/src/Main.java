@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.HashSet;
+import java.util.Comparator;
 import java.util.TreeSet;
 
 public class Main {
@@ -13,15 +13,21 @@ public class Main {
 
         String result= null;
 
-        TreeSet<String> listaImion = new TreeSet<>();
+
+        //Przemyśleć jak działa ten Comparator żeby to zrozumieć powtórzyć tą lekcję !!!
+
+        TreeSet<String> listaImion = new TreeSet<>(new Comparator<String>() {
+            @Override
+            public int compare(String s1, String s2) {
+                return -s1.compareTo(s2);
+            }
+        });
+
         while((result = reader.readLine()) != null){
 
             listaImion.add(result);
-        }
-        //dodać funkcjonalnoś która odwróci faktycznie te TreeSet , wykorzystać
-        // comparator do tego i douczyć się o tym comparatorze !!!
-        
-        System.out.println(listaImion.reversed());
 
+        }
+        System.out.println(listaImion);
     }
 }
