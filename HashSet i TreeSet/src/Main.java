@@ -29,5 +29,8 @@ public class Main {
 
         }
         System.out.println(listaImion);
+        System.out.println(listaImion.size());
+        System.out.println(listaImion.first());
+        System.out.println(listaImion.last());
     }
 }
